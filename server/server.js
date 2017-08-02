@@ -1,10 +1,18 @@
-var path = require('path')
-var express = require('express')
-var bodyParser = require('body-parser')
+const path = require('path')
+const express = require('express')
+const bodyParser = require('body-parser')
 
-var server = express()
+const places = require('./routes/places')
 
-server.use(bodyParser.json())
-server.use(express.static(path.join(__dirname, '../public')))
+
+const server = express()
+server.use(express.static('public'))
+
+server.use('/v1/places', places)
+
+
+// server.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '/../public/index.html'))
+// })
 
 module.exports = server
