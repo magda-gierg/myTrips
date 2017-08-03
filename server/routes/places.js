@@ -9,7 +9,7 @@ router.use(bodyParser.json())
 router.get('/', function(req, res) {
   db.getPlaces()
   .then(function(places) {
-    res.send(places)
+    res.json(places)
   })
 .catch(function (err) {
    res.status(500).send('DATABASE ERROR: ' + err.message)
