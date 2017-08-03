@@ -15,12 +15,13 @@ class Place extends React.Component {
 
 
   render () {
-    const {id, place, date, description} = this.props.place
+    const {id, place, date, description, image} = this.props.place
     return (
       <div>
             <h2>{place}</h2>
             <h3>{date}</h3>
             <h3>{description}</h3>
+            <p><img src={image}/></p>
       </div>
     )
   }
