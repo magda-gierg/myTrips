@@ -22,8 +22,10 @@ class Place extends React.Component {
             <h3>{date}</h3>
             <h3>{description}</h3>
             <p><img src={image}/></p>
+            <Link to="/" >Home</Link>
       </div>
     )
+
   }
 }
 

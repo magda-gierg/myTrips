@@ -1,10 +1,10 @@
 import React from 'react'
 import AppRoutes from './AppRoutes'
-import { getPlaces } from '../api'
+import {getPlaces} from '../api'
 
 class App extends React.Component {
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       places: [],
@@ -13,32 +13,24 @@ class App extends React.Component {
     this.fetchPlaces = this.fetchPlaces.bind(this)
   }
 
-  componentWillMount () {
+  componentWillMount() {
     this.fetchPlaces()
   }
 
-  fetchPlaces () {
-    return getPlaces()
-      .then(places => {
-        this.setState({ places: places })
-      })
-      .catch(err => {
-        this.setState({ errorMessage: err.message })
-      })
+  fetchPlaces() {
+    return getPlaces().then(places => {
+      this.setState({places: places})
+    }).catch(err => {
+      this.setState({errorMessage: err.message})
+    })
   }
 
-  render () {
+  render() {
     return (
 
-        <div>
-          <AppRoutes
-            places={this.state.places}
-            fetchPlaces={this.fetchPlaces}
-          />
-          {this.state.errorMessage &&
-            <h1>{this.state.errorMessage}</h1>
-          }
-        
+      <div>
+        <AppRoutes places={this.state.places} fetchPlaces={this.fetchPlaces}/> {this.state.errorMessage && <h1>{this.state.errorMessage}</h1>}
+
       </div>
     )
   }
