@@ -1,7 +1,6 @@
 import React from 'react'
 import {addPlace} from '../api'
 import {Link} from 'react-router-dom'
-
 class PlaceForm extends React.Component {
 
   constructor(props) {

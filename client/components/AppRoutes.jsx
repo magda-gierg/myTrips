@@ -3,6 +3,7 @@ import {Route, Switch} from 'react-router-dom'
 import Places from './Places'
 import Place from './Place'
 import PlaceForm from './PlaceForm'
+import MapContainer from './MapContainer'
 
 class Routes extends React.Component {
   render() {
@@ -21,6 +22,8 @@ class Routes extends React.Component {
                 deletePlace={this.props.deletePlace}
                  place={this.props.places.find((place) =>
                   place.id === Number(props.match.params.id))} {...props}/>}/>
+                  <Route component={MapContainer}
+                           path='/map'/>
 
         </Switch>
       </div>
