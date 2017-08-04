@@ -27,3 +27,12 @@ export function addPlace (place) {
       throw Error('Cannot POST a new Place!')
     })
 }
+
+export function requestDeletePlace(id, callback) {
+  request
+    .delete('/v1/places/' + id)
+    .end((err, res) => {
+      if (err) callback(err)
+      else callback(null)
+    })
+}

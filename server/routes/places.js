@@ -27,6 +27,15 @@ router.post('/', function(req, res) {
    })
   })
 
+router.delete('/:id', (req, res) => {
+  db.deletePlace(req.params.id)
+    .then(() => {
+      res.sendStatus(204)
+    })
+    .catch(err => {
+      res.sendStatus(500).send('DATABASE ERROR: ' + err.message)
+})
+})
 
 
 module.exports = router

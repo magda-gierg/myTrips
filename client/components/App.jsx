@@ -1,6 +1,6 @@
 import React from 'react'
 import AppRoutes from './AppRoutes'
-import {getPlaces} from '../api'
+import {getPlaces, requestDeletePlace} from '../api'
 
 class App extends React.Component {
 
@@ -11,6 +11,7 @@ class App extends React.Component {
       errorMessage: ''
     }
     this.fetchPlaces = this.fetchPlaces.bind(this)
+    this.deletePlace = this.deletePlace.bind(this)
   }
 
   componentWillMount() {
@@ -25,11 +26,16 @@ class App extends React.Component {
     })
   }
 
+  deletePlace(id) {
+   requestDeletePlace(id, this.fetchPlaces.bind(this))
+ }
+
   render() {
     return (
 
       <div>
-        <AppRoutes places={this.state.places} fetchPlaces={this.fetchPlaces}/> {this.state.errorMessage && <h1>{this.state.errorMessage}</h1>}
+        <AppRoutes places={this.state.places} fetchPlaces={this.fetchPlaces} deletePlace={this.deletePlace} />
+          {this.state.errorMessage && <h1>{this.state.errorMessage}</h1>}
 
       </div>
     )
