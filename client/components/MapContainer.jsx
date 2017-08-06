@@ -3,23 +3,32 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 // ...
 
-export class MapContainer extends React.Component {
+class MapContainer extends React.Component {
+  constructor (props) {
+    super(props)
 
+  }
   render() {
     return (
       <Map google={this.props.google}
         style={{width: '50%', height: '80%', position: 'relative'}}
         className={'map'}
-        zoom={14}>
+        zoom={7}
+        initialCenter={{
+            lat: -36.8547512,
+            lng: 174.7787425
+          }}
+          >
+          {this.props.places.map((place, key) => {
+            const id = place.id.toString();
+            return (
       <Marker
-        title={'The marker`s title will appear as a tooltip.'}
+        key = {key}
+        title={place.place}
         name={'SOMA'}
-        position={{lat: 37.778519, lng: -122.405640}} />
-      <Marker
-        name={'Dolores park'}
-        position={{lat: 37.759703, lng: -122.428093}} />
-      <Marker />
-
+        position={{lat: Number(place.lat), lng: Number(place.lng)}} />
+    )
+  })}
     </Map>
     );
   }

@@ -22,8 +22,10 @@ class Routes extends React.Component {
                 deletePlace={this.props.deletePlace}
                  place={this.props.places.find((place) =>
                   place.id === Number(props.match.params.id))} {...props}/>}/>
-                  <Route component={MapContainer}
-                           path='/map'/>
+                <Route exact path='/map' render={(props) =>
+                      <MapContainer places={this.props.places} fetchPlaces={this.props.fetchPlaces}
+                          deletePlace={this.props.deletePlace}
+                        {...props}/>}/>
 
         </Switch>
       </div>

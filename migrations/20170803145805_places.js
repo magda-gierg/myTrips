@@ -6,8 +6,8 @@ exports.up = function(knex, Promise) {
     table.date('date')
     table.string('description')
     table.string('image')
-    table.string('lang')
-    table.string('long')
+    table.string('lat')
+    table.string('lng')
   })
 }
 

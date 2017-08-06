@@ -69,7 +69,7 @@ render() {
         </div>
 
         <div>
-          <label>Image Url</label>
+          <label>Image url</label>
           <textarea name='image' value={image} onChange={(e) => this.updateDetails(e)}></textarea>
         </div>
 

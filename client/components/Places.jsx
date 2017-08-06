@@ -1,13 +1,14 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import PropTypes from 'prop-types';
-import { withStyles, createStyleSheet } from 'material-ui/styles';
-import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
-import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
-import Grid from 'material-ui/Grid';
-import AddIcon from 'material-ui-icons/Add';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { withStyles, createStyleSheet } from "material-ui/styles"
+import Card, { CardActions, CardContent, CardMedia } from "material-ui/Card"
+import Button from "material-ui/Button"
+import IconButton from 'material-ui/IconButton'
+import Typography from "material-ui/Typography"
+import Grid from "material-ui/Grid"
+import AddIcon from "material-ui-icons/Add"
+import DeleteIcon from 'material-ui-icons/Delete';
 
 const styleSheet = createStyleSheet(theme => ({
   card: {
@@ -17,19 +18,21 @@ const styleSheet = createStyleSheet(theme => ({
   },
   root: {
     flexGrow: 1,
-    marginTop: 30,
+    marginTop: 30
   },
   paper: {
     padding: 16,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
+    textAlign: "center",
+    color: theme.palette.text.secondary
   },
   button: {
-    position: 'fixed',
-        right: '50px',
-        bottom: '50px',
-
- }
+    position: "fixed",
+    right: "50px",
+    bottom: "50px"
+  },
+  iButton: {
+    margin: theme.spacing.unit,
+  }
 }));
 
 function SimpleMediaCard(props) {
@@ -37,46 +40,50 @@ function SimpleMediaCard(props) {
 
   return (
     <div className={classes.root}>
-      <Grid container gutter={40}>
+      <Grid container>
         {props.places.map((place, key) => {
-
-          const id = place.id.toString()
-          return <div key={key}>
-  <Grid item xs>
-      <Card className={classes.card}>
-        <CardMedia>
-          <img src={place.image} alt="Contemplative Reptile" height="150 "width="250"/>
-        </CardMedia>
-        <CardContent>
-          <Typography type="headline" component="h2">
-            {place.place}
-          </Typography>
-
-
-        </CardContent>
-        <CardActions>
-   <Link to={"/places/" + place.id}>{place.place}</Link>
-            <button onClick={() => props.deletePlace(place.id)} >Delete</button>
-          <Button dense color="primary" href={"/#/places/" + id}>
-            Details
-          </Button>
-        </CardActions>
-      </Card>
-              <Link to="/places/new">Add new</Link>
+          const id = place.id.toString();
+          return (
+            <div key={key}>
+              <Grid item xs>
+                <Card className={classes.card}>
+                  <CardMedia>
+                    <img
+                      src={place.image}
+                      alt="Contemplative Reptile"
+                      height="150 "
+                      width="250"
+                    />
+                  </CardMedia>
+                  <CardContent>
+                    <Typography type="headline" component="h2">
+                      {place.place}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button dense color="primary" >
+                      <Link to={"/places/" + id}>Details</Link>
+                    </Button>
+                
+                    <IconButton className={classes.iButton} aria-label="Delete" onClick={() => props.deletePlace(place.id)}>
+                          <DeleteIcon />
+                        </IconButton>
+                  </CardActions>
+                </Card>
+              </Grid>
+            </div>
+          );
+        })}
       </Grid>
-      </div>
-})
-    }
-</Grid>
-<Button fab color="primary" className={classes.button}>
-       <AddIcon />
-     </Button>
+      <Button fab color="primary" className={classes.button} href="/#/places/new">
+        <AddIcon />
+      </Button>
     </div>
   );
 }
 
 SimpleMediaCard.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styleSheet)(SimpleMediaCard);

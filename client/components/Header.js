@@ -7,6 +7,7 @@ import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
+import { Link } from "react-router-dom";
 
 const styleSheet = createStyleSheet({
   root: {
@@ -24,12 +25,12 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton color="contrast" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
+
           <Typography type="title" color="inherit" className={classes.flex}>
             My Places
           </Typography>
+          <Button color="contrast" href="#">List</Button>
+          <Button color="contrast" href="#/map">Map</Button>
         </Toolbar>
       </AppBar>
     </div>
