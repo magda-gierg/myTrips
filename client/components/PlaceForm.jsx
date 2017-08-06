@@ -47,15 +47,15 @@ class PlaceForm extends React.Component {
 
 render() {
 
-  let {data, place, image, description} = this.state.place
+  let {date, place, image, description} = this.state.place
   return (
     <form onSubmit={this.handleSubmit}>
 
       {!this.props.post && <h2>Add a new place</h2>}
 
         <div>
-          <label>Data</label>
-          <textarea name='data' value={data} onChange={(e) => this.updateDetails(e)}></textarea>
+          <label>Date</label>
+          <textarea name='date' value={date} onChange={(e) => this.updateDetails(e)}></textarea>
         </div>
 
         <div>

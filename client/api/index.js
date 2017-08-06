@@ -16,7 +16,6 @@ export function getPlaces() {
 }
 
 export function addPlace (place) {
-  console.log({place});
   return request.post('/v1/places')
     .send(place)
     .then(data => {
@@ -30,7 +29,8 @@ export function addPlace (place) {
 
 export function requestDeletePlace(id, callback) {
   request
-    .delete('/v1/places/' + id)
+    // .delete('/v1/places/' + id)
+    .delete(`/v1/places/${id}`)
     .end((err, res) => {
       if (err) callback(err)
       else callback(null)

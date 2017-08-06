@@ -16,14 +16,12 @@ class Place extends React.Component {
     const {id, place, date, description, image} = this.props.place
     return (
       <div>
-            <h2>{place}</h2>
-            <h3>{date}</h3>
-            <h3>{description}</h3>
-            <p><img src={image}/></p>
-          
-            <Link to="/" >Home</Link>
+        <h2>{place}</h2>
+        <h3>{date}</h3>
+        <h3>{description}</h3>
+        <p><img src={image} width= '500px' /></p>
+        <Link to="/" >Home</Link>
       </div>
-
     )
   }
 }

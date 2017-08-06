@@ -35,25 +35,26 @@ const styleSheet = createStyleSheet(theme => ({
   }
 }));
 
-function SimpleMediaCard(props) {
+function displayPlaces(props) {
   const classes = props.classes;
-
   return (
     <div className={classes.root}>
       <Grid container>
+
         {props.places.map((place, key) => {
           const id = place.id.toString();
           return (
             <div key={key}>
+
               <Grid item xs>
                 <Card className={classes.card}>
                   <CardMedia>
                     <img
                       src={place.image}
-                      alt="Contemplative Reptile"
+                      alt={place.place}
                       height="150 "
                       width="250"
-                    />
+                      />
                   </CardMedia>
                   <CardContent>
                     <Typography type="headline" component="h2">
@@ -64,10 +65,10 @@ function SimpleMediaCard(props) {
                     <Button dense color="primary" >
                       <Link to={"/places/" + id}>Details</Link>
                     </Button>
-                
+
                     <IconButton className={classes.iButton} aria-label="Delete" onClick={() => props.deletePlace(place.id)}>
-                          <DeleteIcon />
-                        </IconButton>
+                      <DeleteIcon />
+                    </IconButton>
                   </CardActions>
                 </Card>
               </Grid>
@@ -82,8 +83,13 @@ function SimpleMediaCard(props) {
   );
 }
 
-SimpleMediaCard.propTypes = {
+displayPlaces.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styleSheet)(SimpleMediaCard);
+export default withStyles(styleSheet)(displayPlaces);
+
+
+
+// https://material-ui-1dab0.firebaseapp.com/component-demos/cards
+// https://material-ui-1dab0.firebaseapp.com/layout/grid

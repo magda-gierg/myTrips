@@ -13,7 +13,7 @@ function getPlaces() {
 }
 
 function addPlace(body) {
-  return knex("places").insert(body)
+  return  knex("places").insert(body)
 }
 
 function deletePlace (id) {

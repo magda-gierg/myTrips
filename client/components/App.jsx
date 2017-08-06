@@ -4,7 +4,6 @@ import Header from './Header'
 import {getPlaces, requestDeletePlace} from '../api'
 
 class App extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -21,16 +20,18 @@ class App extends React.Component {
 
 
   fetchPlaces() {
-    return getPlaces().then(places => {
-      this.setState({places: places})
-    }).catch(err => {
+    return getPlaces()
+    .then(placesArray => {
+      this.setState({places: placesArray})
+    })
+    .catch(err => {
       this.setState({errorMessage: err.message})
     })
   }
 
   deletePlace(id) {
-   requestDeletePlace(id, this.fetchPlaces.bind(this))
- }
+    requestDeletePlace(id, this.fetchPlaces)
+  }
 
   render() {
     return (
@@ -38,12 +39,10 @@ class App extends React.Component {
       <div>
         <Header />
         <AppRoutes places={this.state.places} fetchPlaces={this.fetchPlaces} deletePlace={this.deletePlace} />
-          {this.state.errorMessage && <h1>{this.state.errorMessage}</h1>}
-
+        {this.state.errorMessage && <h1>{this.state.errorMessage}</h1>}
       </div>
     )
   }
+}
 
-    }
-
-    module.exports = App
+module.exports = App
