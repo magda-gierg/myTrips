@@ -1,5 +1,6 @@
 import React from 'react'
 import AppRoutes from './AppRoutes'
+import Header from './Header'
 import {getPlaces, requestDeletePlace} from '../api'
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
     this.fetchPlaces()
   }
 
+
   fetchPlaces() {
     return getPlaces().then(places => {
       this.setState({places: places})
@@ -34,6 +36,7 @@ class App extends React.Component {
     return (
 
       <div>
+        <Header />
         <AppRoutes places={this.state.places} fetchPlaces={this.fetchPlaces} deletePlace={this.deletePlace} />
           {this.state.errorMessage && <h1>{this.state.errorMessage}</h1>}
 
@@ -41,6 +44,6 @@ class App extends React.Component {
     )
   }
 
-}
+    }
 
-module.exports = App
+    module.exports = App
