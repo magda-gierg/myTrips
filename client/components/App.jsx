@@ -1,7 +1,7 @@
 import React from 'react'
 import AppRoutes from './AppRoutes'
 import { getPlaces } from '../api'
-
+import Header from './Header'
 class App extends React.Component {
 
   constructor (props) {
@@ -19,30 +19,29 @@ class App extends React.Component {
 
   fetchPlaces () {
     return getPlaces()
-      .then(places => {
-        this.setState({ places: places })
-      })
-      .catch(err => {
-        this.setState({ errorMessage: err.message })
-      })
+    .then(places => {
+      this.setState({ places: places })
+    })
+    .catch(err => {
+      this.setState({ errorMessage: err.message })
+    })
   }
 
   render () {
     return (
 
-        <div>
-          <AppRoutes
+      <div>
+        <Header />
+        <AppRoutes
             places={this.state.places}
-            fetchPlaces={this.fetchPlaces}
-          />
-          {this.state.errorMessage &&
-            <h1>{this.state.errorMessage}</h1>
-          }
+            fetchPlaces={this.fetchPlaces} />
+            {this.state.errorMessage &&
+              <h1>{this.state.errorMessage}</h1> }
         
-      </div>
-    )
-  }
+        </div>
+        )
+      }
 
-}
+    }
 
-module.exports = App
+    module.exports = App
