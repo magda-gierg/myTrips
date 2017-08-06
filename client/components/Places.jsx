@@ -34,10 +34,12 @@ const styleSheet = createStyleSheet(theme => ({
 
 function SimpleMediaCard(props) {
   const classes = props.classes;
+
   return (
     <div className={classes.root}>
       <Grid container gutter={40}>
         {props.places.map((place, key) => {
+
           const id = place.id.toString()
           return <div key={key}>
   <Grid item xs>
@@ -50,14 +52,17 @@ function SimpleMediaCard(props) {
             {place.place}
           </Typography>
 
+
         </CardContent>
         <CardActions>
-
+   <Link to={"/places/" + place.id}>{place.place}</Link>
+            <button onClick={() => props.deletePlace(place.id)} >Delete</button>
           <Button dense color="primary" href={"/#/places/" + id}>
             Details
           </Button>
         </CardActions>
       </Card>
+              <Link to="/places/new">Add new</Link>
       </Grid>
       </div>
 })
