@@ -1,5 +1,5 @@
 import React from 'react'
-import {Map, InfoWindow, Marker} from 'google-maps-react';
+import {Map, Marker} from 'google-maps-react';
 
 
 class MapContainer extends React.Component {
@@ -24,7 +24,7 @@ class MapContainer extends React.Component {
       <Marker
         key = {key}
         title={place.place}
-        name={'SOMA'}
+        name={place.place}
         position={{lat: Number(place.lat), lng: Number(place.lng)}} />
     )
   })}

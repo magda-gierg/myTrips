@@ -4,10 +4,9 @@ import Header from './Header'
 import {getPlaces, requestDeletePlace} from '../api'
 import PropTypes from "prop-types";
 import AddIcon from "material-ui-icons/Add"
-
 import { withStyles, createStyleSheet } from "material-ui/styles"
-import Card, { CardActions, CardContent, CardMedia } from "material-ui/Card"
 import Button from "material-ui/Button"
+
 const styleSheet = createStyleSheet(theme => ({
   card: {
     maxWidth: 250,
@@ -32,6 +31,7 @@ const styleSheet = createStyleSheet(theme => ({
     margin: theme.spacing.unit,
   }
 }));
+
 class App extends React.Component {
   constructor(props) {
     super(props)

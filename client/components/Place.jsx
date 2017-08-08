@@ -39,30 +39,27 @@ class Place extends React.Component {
           </Typography>
           <Typography type="body1" component="p">
             <img src={image} width="500px" height="300px" />{" "}
-          </Typography>
-        <Typography type="body1" component="p">
-
-          <Link to="/">HOME</Link>
-
-        </Typography>
-      </Paper>
-
-      </div>
-    );
+            </Typography>
+            <Typography type="body1" component="p">
+              <Link to="/">HOME</Link>
+            </Typography>
+          </Paper>
+        </div>
+      );
+    }
   }
-}
 
-Place.defaultProps = {
-  place: {
-    place: "",
-    date: "",
-    id: null,
-    description: ""
-  }
-};
+  Place.defaultProps = {
+    place: {
+      place: "",
+      date: "",
+      id: null,
+      description: ""
+    }
+  };
 
-Place.propTypes = {
-  classes: PropTypes.object.isRequired
-};
+  Place.propTypes = {
+    classes: PropTypes.object.isRequired
+  };
 
-export default withStyles(styleSheet)(Place);
+  export default withStyles(styleSheet)(Place);

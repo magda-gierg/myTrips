@@ -4,7 +4,7 @@ import Places from "./Places";
 import Place from "./Place";
 import PlaceForm from "./PlaceForm";
 import MapContainer from "./MapContainer";
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+
 
 class Routes extends React.Component {
   render() {

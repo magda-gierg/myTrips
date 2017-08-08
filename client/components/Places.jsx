@@ -26,11 +26,6 @@ const styleSheet = createStyleSheet(theme => ({
     textAlign: "center",
     color: theme.palette.text.secondary
   },
-  button: {
-    position: "fixed",
-    right: "50px",
-    bottom: "50px"
-  },
   iButton: {
     margin: theme.spacing.unit,
   }
