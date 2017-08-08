@@ -27,7 +27,7 @@ function ButtonAppBar(props) {
         <Toolbar>
 
           <Typography type="title" color="inherit" className={classes.flex}>
-            Postcards from New Zeland
+            My places
           </Typography>
           <Button color="contrast" href="#">List</Button>
           <Button color="contrast" href="#/map">Map</Button>

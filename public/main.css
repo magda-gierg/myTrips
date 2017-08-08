@@ -1,0 +1,28 @@
+input[type=text] {
+    padding:5px ;
+    border:6px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+input[type=submit] {
+    padding:10px 20px;
+    color: white;
+    background: #3f51b5;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+h3 {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+}
+label {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+a:-webkit-any-link {
+    text-decoration: none;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}

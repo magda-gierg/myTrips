@@ -13,6 +13,7 @@ import DeleteIcon from 'material-ui-icons/Delete';
 const styleSheet = createStyleSheet(theme => ({
   card: {
     maxWidth: 250,
+    height: 300,
     padding: 16,
     margin: 10
   },
@@ -52,12 +53,12 @@ function displayPlaces(props) {
                     <img
                       src={place.image}
                       alt={place.place}
-                      height="150 "
+                      height="150"
                       width="250"
                       />
                   </CardMedia>
                   <CardContent>
-                    <Typography type="headline" component="h2">
+                    <Typography type="title" component="h3">
                       {place.place}
                     </Typography>
                   </CardContent>
@@ -76,9 +77,7 @@ function displayPlaces(props) {
           );
         })}
       </Grid>
-      <Button fab color="primary" className={classes.button} href="/#/places/new">
-        <AddIcon />
-      </Button>
+
     </div>
   );
 }
