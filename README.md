@@ -1,15 +1,17 @@
-My first personal project that started on the 4th week of bootcamp in EDA Wellington
+My first personal project in EDA Wellington
 
 You can find it online https://my-places-nz.herokuapp.com/#/
 
-Install:
+Getting started:
 
-clone this repo: git clone https://github.com/magda-gierg/myTrips
-
-then:
+git clone https://github.com/magda-gierg/myTrips
 
 cd myTrips
 
 npm install
 
-npm start
+npm run knex migrate:latest
+
+npm run knex seed:run
+
+npm run dev and go to http://localhost:3000/
