@@ -1,8 +1,6 @@
 exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
   return knex('Places').del()
     .then(function () {
-      // Inserts seed entries
       return knex('Places').insert([
         {id: 1, place: 'Cape Reinga', date: '17/11/2015', description: 'Lighthouse', image: 'https://t1.pixers.pics/img/obrazy-na-plotnie-cape-reinga-lighthouse-krawedz-na-polnoc-od-nowej-zelandii.png?H4sIAAAAAAAAAyWKUQrCMBAFr6MgfUm2SdoeoL89QknjRiMioZuCeHojfr1h5uF4SUiMlJ-Vd5l2lvzhk1fqos6411pkAoS6kt-tt4mCP6OdMC9wBr0FOQzmp9Z5caa35AazJiLW2vsUgyKTjN-ubiS9-TFE1sp2j3L7AhACHOiCAAAA', lat:'-34.428779', lng:'172.68048699999997'},
         {id: 2, place: 'Karikari Pennisula', date: '20/11/2015', description: 'Matai Bay, Puheke Beach', image: 'http://www.warrenwilliams.co.nz/2009/JAN_2910.jpg', lat:'-34.828882', lng:'173.40992000000006'},

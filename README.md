@@ -1,15 +1,12 @@
-# A starter webpack project for React
+My first personal project that started on the 4th week of bootcamp in EDA Wellington
 
-This is a starter project that uses webpack to transpile and bundle ES6 React code. To use, consider this approach:
+You can find it online https://my-places-nz.herokuapp.com/#/
 
-* Fork this repo
-* Rename your repo according to the app you're building
+Install:
 
-```sh
-git clone https://github.com/dev-academy-challenges/[your-app].git
-cd [your-app] && npm install
-```
+clone this repo: git clone https://github.com/magda-gierg/myTrips
+then:
 
-To start the development server with a watcher that refreshes your browser, run `npm start`. The assets built by webpack are placed in `server/static`. This folder is defined as a static folder in an Express.js server that can be started with `npm run server`.
-
-Additional components should be placed in `client/components`.
+cd myTrips
+npm install
+npm run
